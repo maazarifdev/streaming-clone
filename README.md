@@ -1,54 +1,54 @@
-# 🎬 Netflix Clone
+# Streaming UI Clone — Frontend Practice Project
 
-A **fully responsive front-end clone of Netflix**, built with modern **HTML, CSS, and JavaScript**. This project replicates the iconic Netflix landing page UI, featuring interactive cards, smooth animations, a cinematic hero section, and a fully responsive design.
-
----
+> ⚠️ **Educational Project Only** — This is a frontend development practice project built for learning purposes. It is NOT affiliated with, endorsed by, or connected to Netflix Inc. in any way. No login credentials are collected or stored.
 
 ## 🚀 Live Demo
-
-[Live Demo](https://maazarifdev.github.io/streaming-clone/)
-
----
-
-## ✨ Features
-
-- **Responsive Design** – Works seamlessly on mobile, tablet, and desktop.
-- **Hero Section with Animated Curves** – Cinematic top curve using SVG, gradients, and blur effects.
-- **Trending Now Section** – Scrollable, interactive movie/show cards with hover animations.
-- **Interactive Cards** – Hover effects with scaling, overlays, and ranking numbers.
-- **Accordion FAQ Section** – Expandable questions with smooth transitions.
-- **Animated “More Reasons” Section** – Feature boxes with shimmer effect and hover interactions.
-- **Email Subscription Forms** – Validates input with toast notifications.
-- **Sticky Navbar** – Shrinks and blurs dynamically on scroll.
-- **Custom Scrollbar** – Styled to match the Netflix theme.
-- **Modern Animations** – Intersection Observer reveals for smooth entrance animations.
-- **Professional UI Design** – Uses gradients, shadows, and cinematic color scheme.
-
----
+[View on Vercel](https://your-vercel-link-here.vercel.app)
 
 ## 🛠️ Built With
+- HTML5 (semantic structure)
+- CSS3 (Flexbox, Grid, CSS Variables, clamp(), Animations)
+- Vanilla JavaScript (no frameworks)
 
-- **HTML5**
-- **CSS3** (Flexbox, Grid, CSS Variables, Clamp, Media Queries)
-- **JavaScript** (ES6+, Intersection Observer, DOM Manipulation)
-- **SVG** (Curved hero paths and icons)
-- **Font Awesome 7** for icons
+## ✨ Features
+- Fully responsive (mobile 320px → desktop 4K)
+- CSS scroll-reveal animations with IntersectionObserver
+- SVG cubic Bézier curve / bulge effect
+- FAQ accordion with smooth transitions
+- Sticky navbar with blur on scroll
+- Email validation with toast notifications
+- Horizontal scroll card row with snap
 
----
+## 📁 Folder Structure
+```
+project/
+├── index.html
+├── README.md
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── assets/
+    ├── logo/
+    │   └── logo.svg
+    ├── background-image/
+    │   └── bg.jpg
+    └── card-image/
+        ├── card-image1.webp
+        └── ...
+```
 
-## 🎨 Design & UX Highlights
+## 📚 Purpose
+Built to practice:
+- Responsive web design
+- CSS animations and transitions
+- JavaScript DOM manipulation
+- SVG path drawing and effects
+- GitHub + Vercel deployment workflow
 
-- Smooth **hover animations** on cards and boxes
-- Cinematic **SVG hero curves** with glow effects
-- **Scroll-reveal animations** for a modern dynamic feel
-- **Shimmering borders** for “More Reasons” boxes
-- **Accessible design** with semantic HTML & `aria` attributes
+> All third-party trademarks, images and brand names belong to their respective owners.
+> This project is for **educational use only** and is not intended for commercial use.
 
----
-
-## 📱 Responsive Layout
-
-- Desktop: Multi-column layout with 4 “More Reasons” boxes
-- Tablet: 2-column layout
-- Mobile: Single-column layout with stacked cards & sections
-- Hero section scales with viewport using **clamp** & **fluid typography**
+## 👨‍💻 Author
+**Maaz Arif** — Frontend Developer in Training
+- GitHub: [@maazarifdev](https://github.com/maazarifdev)
