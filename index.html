@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo/favicon (1).ico" type="image/x-icon">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+   
+    
+  <main>
+    <div class="main">
+      <nav>
+        <span>
+          <img src="assets/logo/logo.svg" loading="lazy" alt="Netflix Logo" />
+        </span>
+        <div class="button">
+          <button class="lang">
+            <i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i>
+          </button>
+          <button class="sign">Sign In</button>
+        </div>
+      </nav>
+
+      <div class="main-text">
+        <h1>Unlimited movies, TV<br/>shows, and more</h1>
+        <p>Starts at Rs 250. Cancel anytime.</p>
+        <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+        <div class="data">
+          <input type="email" id="heroEmail" placeholder="Email address" autocomplete="email" />
+          <button onclick="handleGetStarted('heroEmail')">
+            Get Started <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="box"></div>
+
+      <!-- ── BULGE CURVE ── -->
+      <div class="hero">
+        <div class="hero-bg"></div>
+
+        <svg class="curve-arc" viewBox="0 0 1000 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="redglow" x="-10%" y="-100%" width="12 0%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="bigblur"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="smallblur"/>
+              <feMerge>
+                <feMergeNode in="bigblur"/>
+                <feMergeNode in="smallblur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M0,120 C250,-20 750,-20 1000,120" fill="none" stroke="#e50914" stroke-width="3" filter="url(#redglow)"/>
+        </svg>
+
+        <svg class="curve-mask" viewBox="0 0 1000 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,110 L0,100 C250,5 750,5 1000,100 L1000,110 Z" fill="#141414"/>
+        </svg>
+      </div>
+    </div>
+    <!-- END .main -->
+
+
+<!-- Page 2 -->
+    <div class="page2">
+
+      <!-- Trending Now -->
+      <p class="trending-label reveal">Trending Now</p>
+
+      <div class="trending">
+        <div class="cards-row">
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaVXphhPzy58tJ3rd8QfNF5NcfcfNfY5BgnNHimngTEVemB8AL4fdcqXvOx8_0W5zGAbzg3prRKtcfFkwsfE813oiYiuIoYrXdQME5LO71LyHhCPJ0MZNuPOiB0wOOngD05e.webp?r=7e2" alt="Berlin" loading="lazy"/>
+            <span class="rank">1</span>
+          </div>
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABdu2BTLzDZapIFx3LR83EP5CFJAEcfDaaAhGnIUoz9tEn-xy2K1XjaBe0Wfz0zQB8wWEI17kf-RcCKeqLsV7TsR6oZKZYjqlw34.webp?r=79f" alt="Dhurandhar" loading="lazy"/>
+            <span class="rank">2</span>
+          </div>
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYWfklg5D5btQoekHBjGHSFXDW_EezXrT97RnSaEwirkVnCt91QaQlcPWCxtfkSrW04hOcHguRrAMgyKTJzs2_PKkFkbs60DHC4.webp?r=05f" alt="Show 3" loading="lazy"/>
+            <span class="rank">3</span>
+          </div>
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWuYCksEgDVxmAt7osOPgI2JPrTg2rMKChNtrxGYOLk3f3lSwPn_7LIgNlYR23qKIZJXY5GGnrrJuv4AL0rviaWSXxSAE4G-p5D1D88PG5Yre0PcmS2Xmg5eMIJmi9ZRx3J6.webp?r=ea8" alt="Kartavya" loading="lazy"/>
+            <span class="rank">4</span>
+          </div>
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABSz2cw4icUVSEUYl88YZOA-3omepErekmOdyt5ywWsW-psmyYByB3Lv-DfawT-V2bMR4_e0yo9Ak71oIHXqQ3EXmWMFzC2Xo6763w7eW_ANBVsmdrNM7SyF4QeY78rNvuedV.webp?r=630" alt="Show 5" loading="lazy"/>
+            <span class="rank">5</span>
+          </div>
+
+          <div class="card reveal">
+            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUet8hcKke_oXjU3AC4J8G-bc-HZP2ZY-Th80oBke3G3arUch8e3JG9vXVeu4xshLAQedlDlncuVlmHnSEoEsn0qxeq3qbjBGEtLB0Xz9eaa53Fzw6fqkUjUPHXyzajWW-Dx.webp?r=694" alt="Show 6" loading="lazy"/>
+            <span class="rank">6</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- More Reasons -->
+      <span class="reasons-label reveal">More Reasons to Join</span>
+
+      <div class="reasons">
+
+        <div class="boxes reveal">
+          <h3>Enjoy on your TV</h3>
+          <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="television-core-small"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.2 53.3992C37.2 52.7365 36.6628 52.1992 36 52.1992H34.8C34.1373 52.1992 33.6 52.7365 33.6 53.3992V56.2636C33.6 56.9129 33.0834 57.4433 32.4347 57.4739C30.3013 57.5744 28.1719 57.7834 26.0546 58.1011L19.444 59.0926C18.2692 59.2688 17.4 60.2782 17.4 61.4662V62.0992C17.4 62.4304 17.6686 62.6992 18 62.6992H52.8C53.1314 62.6992 53.4 62.4304 53.4 62.0992V61.4662C53.4 60.2782 52.5309 59.2688 51.3561 59.0926L44.7454 58.1011C42.6282 57.7834 40.4987 57.5744 38.3653 57.4739C37.7167 57.4433 37.2 56.9129 37.2 56.2636V53.3992Z" fill="url(#paint0_radial_5179_1308)"></path><path d="M18.6 60.7388C18.6 60.2306 18.9587 59.796 19.4602 59.711C22.0196 59.2775 29.7585 58.0508 35.4 58.0508C41.0415 58.0508 48.7804 59.2775 51.3398 59.711C51.8412 59.796 52.2 60.2306 52.2 60.7388C52.2 60.902 52.0575 61.0268 51.8967 61.0004C50.1219 60.707 40.9704 59.2409 35.4 59.2409C29.8295 59.2409 20.678 60.707 18.9033 61.0004C18.7425 61.0268 18.6 60.902 18.6 60.7388Z" fill="url(#paint1_radial_5179_1308)"></path><path d="M63 12H8.99995C8.00584 12 7.19995 12.8059 7.19995 13.8V51.6C7.19995 52.5941 8.00584 53.4 8.99995 53.4H63C63.9941 53.4 64.8 52.5941 64.8 51.6V13.8C64.8 12.8059 63.9941 12 63 12Z" fill="url(#paint2_linear_5179_1308)"></path><path d="M63 12H8.99995C8.00584 12 7.19995 12.8059 7.19995 13.8V51.6C7.19995 52.5941 8.00584 53.4 8.99995 53.4H63C63.9941 53.4 64.8 52.5941 64.8 51.6V13.8C64.8 12.8059 63.9941 12 63 12Z" fill="url(#paint3_radial_5179_1308)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8.99995 12.6H63C63.663 12.6 64.2 13.1372 64.2 13.8V50.4H7.79995V13.8C7.79995 13.1372 8.33719 12.6 8.99995 12.6ZM7.19995 50.4V13.8C7.19995 12.8059 8.00581 12 8.99995 12H63C63.9942 12 64.8 12.8059 64.8 13.8V50.4V51.6C64.8 52.5941 63.9942 53.4 63 53.4H8.99995C8.00581 53.4 7.19995 52.5941 7.19995 51.6V50.4Z" fill="url(#paint4_radial_5179_1308)"></path><path d="M35.4 52.8C36.3941 52.8 37.2 52.3971 37.2 51.9C37.2 51.4029 36.3941 51 35.4 51C34.4059 51 33.6 51.4029 33.6 51.9C33.6 52.3971 34.4059 52.8 35.4 52.8Z" fill="url(#paint5_radial_5179_1308)"></path></g><defs><radialGradient id="paint0_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50.3269 49.3723) rotate(118.526) scale(55.1579 46.2871)"><stop stop-color="#802600"></stop><stop offset="0.333333" stop-color="#6F181D"></stop><stop offset="0.666667" stop-color="#5B1333"></stop><stop offset="1" stop-color="#391945"></stop></radialGradient><radialGradient id="paint1_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.1077 53.6128) rotate(158.116) scale(32.7275 42.219)"><stop stop-color="#99421D"></stop><stop offset="0.333333" stop-color="#99161D"></stop><stop offset="0.666667" stop-color="#7D1845"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><linearGradient id="paint2_linear_5179_1308" x1="10.4727" y1="14.9572" x2="56.1755" y2="51.4814" gradientUnits="userSpaceOnUse"><stop stop-color="#99161D"></stop><stop offset="0.245283" stop-color="#CA005B"></stop><stop offset="0.346698" stop-color="#FF479A"></stop><stop offset="0.46934" stop-color="#CC3CFF"></stop><stop offset="0.735849" stop-color="#BC1A22"></stop><stop offset="1" stop-color="#C94FF5"></stop></linearGradient><radialGradient id="paint3_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(38.6181 23.8286) rotate(90) scale(25.9571 25.8545)"><stop stop-color="#1C0E20" stop-opacity="0"></stop><stop offset="1" stop-color="#1C0E20"></stop></radialGradient><radialGradient id="paint4_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(54 20.1938) rotate(144.293) scale(47.2897 44.8232)"><stop stop-color="#EF7744"></stop><stop offset="0.333333" stop-color="#E50914"></stop><stop offset="0.666667" stop-color="#A70D53"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient><radialGradient id="paint5_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.525 51.3562) rotate(135) scale(4.58735)"><stop stop-color="#FFDCCC"></stop><stop offset="0.333333" stop-color="#FFBDC0"></stop><stop offset="0.666667" stop-color="#F89DC6"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient></defs></svg>
+        </div>
+
+        <div class="boxes reveal">
+          <h3>Download your shows to watch offline</h3>
+          <p>Save your favorites easily and always have something to watch.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="download-core-small"><path d="M36 70.2008C54.8882 70.2008 70.2001 54.8889 70.2001 36.0008C70.2001 17.1126 54.8882 1.80078 36 1.80078C17.1119 1.80078 1.80005 17.1126 1.80005 36.0008C1.80005 54.8889 17.1119 70.2008 36 70.2008Z" fill="url(#paint0_radial_5179_7940)"></path><path opacity="0.4" d="M64.7658 36.195C65.5206 51.5916 53.7908 63.5824 38.5668 62.977C23.3428 62.3722 10.3893 49.4 9.63446 34.0034C8.87954 18.6068 20.6091 6.61594 35.8331 7.22116C51.0571 7.82638 64.0104 20.7984 64.7658 36.195Z" fill="url(#paint1_radial_5179_7940)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M39.0849 42.2727L46.3387 35.76L48.8945 38.5142L38.9118 47.477L37.8466 48.4333L36.6071 47.477L24.9899 38.5142L27.0434 35.76L35.4849 42.2727L33.6 21.6016H37.2L39.0849 42.2727Z" fill="url(#paint5_radial_5179_7940)"></path></g><defs><radialGradient id="paint0_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.0001 36.1837) rotate(-90) scale(34.3829)"><stop offset="0.782019" stop-color="#982DBE"></stop><stop offset="1" stop-color="#E4A1FA" stop-opacity="0"></stop></radialGradient><radialGradient id="paint1_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(52.9937 20.0992) rotate(135) scale(49.9836)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient><radialGradient id="paint5_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(31.2 32.1016) rotate(39.5226) scale(15.5567)"><stop stop-color="#EF7744"></stop><stop offset="0.2406" stop-color="#E50914"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient></defs></svg>
+        </div>
+
+        <div class="boxes reveal">
+          <h3>Watch everywhere</h3>
+          <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="telescope-core-small"><path d="M24.0492 36.6016L33.6 46.3898L17.8029 56.8633C17.8029 56.8633 15.8891 57.6983 13.625 55.2638C11.361 52.8293 12.1235 51.238 12.1235 51.238L24.0492 36.6016Z" fill="url(#paint0_radial_5179_1664)"></path><path d="M39 13.0195L59.1 33.6788L32.5325 50.4142C32.5325 50.4142 28.7459 50.2552 24.3978 45.4897C20.0498 40.7243 21.4096 35.8101 21.4096 35.8101L39 13.0195Z" fill="url(#paint2_radial_5179_1664)"></path><path d="M57.6709 15.3516C63.1044 21.2807 63.9858 29.2883 59.6386 33.2371C55.2916 37.186 47.3628 35.5806 41.9292 29.6515C36.4954 23.7224 35.6145 15.7148 39.9615 11.766C44.3084 7.81716 52.2372 9.42252 57.6709 15.3516Z" fill="url(#paint3_radial_5179_1664)"></path></g><defs><radialGradient id="paint0_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.6875 32.7016) rotate(135) scale(34.9134)"><stop stop-color="#99421D"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><radialGradient id="paint2_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42.3 29.106) rotate(135) scale(31.8127)"><stop stop-color="#FB540D"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient><radialGradient id="paint3_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(57.675 14.7078) rotate(134.326) scale(24.0433 24.0367)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient></defs></svg>
+        </div>
+
+        <div class="boxes reveal">
+          <h3>Create profiles for kids</h3>
+          <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="profiles-core-small"><path d="M10.8 15.6008C10.8 12.9499 12.949 10.8008 15.5999 10.8008H40.8C43.4509 10.8008 45.6 12.9498 45.6 15.6008V40.8007C45.6 43.4516 43.4509 45.6007 40.8 45.6007H15.6C12.949 45.6007 10.8 43.4517 10.8 40.8007V15.6008Z" fill="url(#paint0_radial_5179_7919)"></path><path d="M9.59998 14.4016C9.59998 11.7506 11.749 9.60162 14.4 9.60156H39.6C42.251 9.60156 44.4 11.7506 44.4 14.4016V39.6015C44.4 42.2525 42.251 44.4015 39.6 44.4015H14.4C11.749 44.4016 9.59998 42.2525 9.59998 39.6015V14.4016Z" fill="url(#paint1_radial_5179_7919)"></path><path d="M27.6 32.4016C27.6 29.7506 29.749 27.6016 32.4 27.6016L57.6 27.6016C60.2508 27.6016 62.4 29.7506 62.4 32.4016V57.6015C62.4 60.2524 60.2508 62.4016 57.6 62.4016H32.4C29.749 62.4016 27.6 60.2524 27.6 57.6016V32.4016Z" fill="url(#paint6_radial_5179_7919)"></path></g><defs><radialGradient id="paint0_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39.075 17.6882) rotate(135) scale(32.8097)"><stop stop-color="#99421D"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><radialGradient id="paint1_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(62.4 8.70157) rotate(133.87) scale(75.3216)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient><radialGradient id="paint6_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(61.8 29.7016) rotate(135) scale(43.2749)"><stop stop-color="#EF7744"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient></defs></svg>
+        </div>
+
+      </div>
+
+      <!-- ── FAQ ── -->
+      <div class="FAQ">
+        <p id="change" class="reveal">Frequently Asked Questions</p>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            What is Netflix?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more — on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad — all for one low monthly price.</p>
+          </div>
+        </div>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            How much does Netflix cost?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device — all for one fixed monthly fee. Plans range from Rs 250 to Rs 1100 a month. No extra costs, no contracts.</p>
+          </div>
+        </div>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            Where can I watch?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+          </div>
+        </div>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            How do I cancel?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees — start or stop your account anytime.</p>
+          </div>
+        </div>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            What can I watch on Netflix?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+          </div>
+        </div>
+
+        <div class="questions reveal">
+          <button class="margin" aria-expanded="false" type="button" onclick="toggleFAQ(this)">
+            Is Netflix good for kids?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space. Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- END FAQ -->
+
+    </div>
+     <!-- END .page2 -->
+    </main>
+   
+
+    <footer>
+      <div class="footer">
+        <div class="input">
+          <p>Ready to watch? Enter your email to create or restart your membership.</p>
+          <input type="email" id="footerEmail" placeholder="Email address" autocomplete="email"/>
+          <button onclick="handleGetStarted('footerEmail')">
+            Get Started <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <div class="footer-right">
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+          </div>
+          <div class="footer-column">
+            <h4>Products</h4>
+            <a href="#">Netflix. uk</a>
+            <a href="#">Netflix. in</a>
+            <a href="#">Netflix. pk</a>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Forums</a>
+            <a href="#">Documentation</a>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+  <script src="/js/script.js"></script>
+  </body>
+</html>
