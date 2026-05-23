@@ -1,4 +1,6 @@
-/* Reset and rebase  */
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -33,12 +35,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll Bar  */
+/* ══════════════════════════════════════════
+   SCROLL BAR
+══════════════════════════════════════════ */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #1a1a1a; }
 ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
 
-/* nav  */
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
 nav {
   height: 70px;
   max-width: 80vw;
@@ -89,6 +95,10 @@ nav span img { width: 100%; height: auto; }
   font-size: 14px;
 }
 
+.button .lang{
+  padding: 7px 6px;
+}
+
 .button .sign { font-size: 15px; }
 
 .button button:hover {
@@ -97,9 +107,11 @@ nav span img { width: 100%; height: auto; }
   box-shadow: 0 4px 18px rgba(229,9,20,0.4);
 }
 
-/* Main Section  */
+/* ══════════════════════════════════════════
+   MAIN HERO
+══════════════════════════════════════════ */
 .main {
-  background-image: url("/assets/images/bg.jpg");
+  background-image: url("../assets/background-image/bg.jpg");
   min-height: 100vh;
   position: relative;
   background-position: center;
@@ -194,7 +206,7 @@ nav span img { width: 100%; height: auto; }
 
 .data button {
   border-radius: 4px;
-  padding: 15px 24px;
+  padding: 18px 24px;
   background-color: var(--red);
   color: white;
   font-size: clamp(16px, 1.5vw, 22px);
@@ -214,7 +226,9 @@ nav span img { width: 100%; height: auto; }
   box-shadow: 0 6px 24px rgba(229,9,20,0.5);
 }
 
-/* Bulge  */
+/* ══════════════════════════════════════════
+   BULGE / HERO CURVE
+══════════════════════════════════════════ */
 .hero {
   position: relative;
   height: 120px;
@@ -243,8 +257,9 @@ nav span img { width: 100%; height: auto; }
 .curve-arc  { height: 130px; }
 .curve-mask { height: 110px; }
 
-
-   /* PAGE 2  — shared alignment variable */
+/* ══════════════════════════════════════════
+   PAGE 2  — shared alignment variable
+══════════════════════════════════════════ */
 .page2 { --page-pad: clamp(20px, 5vw, 80px); }
 
 /* ── Section headings ── */
@@ -452,8 +467,9 @@ nav span img { width: 100%; height: auto; }
 
 .boxes:hover .down { transform: scale(1.12) rotate(-5deg); }
 
-
-   /* FAQ */
+/* ══════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════ */
 .FAQ {
   padding: 10px var(--page-pad) 60px;
   margin: 0;
@@ -539,8 +555,9 @@ nav span img { width: 100%; height: auto; }
   margin: 0;
 }
 
-
-   /* FOOTER */
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
 footer { background: var(--bg); border-top: 1px solid #2a2a2a; }
 
 .footer {
@@ -642,8 +659,9 @@ footer { background: var(--bg); border-top: 1px solid #2a2a2a; }
 
 .footer-column a:hover { color: #ffd741; padding-left: 5px; }
 
-
-   /* TOAST NOTIFICATION */
+/* ══════════════════════════════════════════
+   TOAST NOTIFICATION
+══════════════════════════════════════════ */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -669,8 +687,9 @@ footer { background: var(--bg); border-top: 1px solid #2a2a2a; }
   opacity: 1;
 }
 
-
-   /* RESPONSIVE */
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
 
 /* Tablet: 2-col reasons */
 @media (max-width: 900px) {
@@ -720,8 +739,9 @@ footer { background: var(--bg); border-top: 1px solid #2a2a2a; }
 /* global p safety reset */
 p { color: var(--text); }
 
-
-   /* STICKY NAV (added via JS class) */
+/* ══════════════════════════════════════════
+   STICKY NAV (added via JS class)
+══════════════════════════════════════════ */
 nav.nav-sticky {
   position: fixed;
   top: 0;

@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/logo/favicon (1).ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo/favicon (1).ico" type="image/x-icon">
     <title>Netflix</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
 
-   
-    
   <main>
     <div class="main">
       <nav>
         <span>
+          <!-- FIXED: removed leading slash -->
           <img src="assets/logo/logo.svg" loading="lazy" alt="Netflix Logo" />
         </span>
         <div class="button">
@@ -40,13 +39,13 @@
 
       <div class="box"></div>
 
-      <!-- ── BULGE CURVE ── -->
+      <!-- BULGE CURVE -->
       <div class="hero">
         <div class="hero-bg"></div>
-
         <svg class="curve-arc" viewBox="0 0 1000 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <filter id="redglow" x="-10%" y="-100%" width="12 0%" height="200%">
+            <!-- FIXED: was width="12 0%" (typo with space) -->
+            <filter id="redglow" x="-10%" y="-100%" width="120%" height="400%">
               <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="bigblur"/>
               <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="smallblur"/>
               <feMerge>
@@ -58,51 +57,48 @@
           </defs>
           <path d="M0,120 C250,-20 750,-20 1000,120" fill="none" stroke="#e50914" stroke-width="3" filter="url(#redglow)"/>
         </svg>
-
         <svg class="curve-mask" viewBox="0 0 1000 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,110 L0,100 C250,5 750,5 1000,100 L1000,110 Z" fill="#141414"/>
         </svg>
       </div>
     </div>
-    <!-- END .main -->
 
-
-<!-- Page 2 -->
+    <!-- Page 2 -->
     <div class="page2">
 
-      <!-- Trending Now -->
       <p class="trending-label reveal">Trending Now</p>
 
       <div class="trending">
         <div class="cards-row">
 
+          <!-- FIXED: all src now point to local files in assets/images/cards/ -->
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaVXphhPzy58tJ3rd8QfNF5NcfcfNfY5BgnNHimngTEVemB8AL4fdcqXvOx8_0W5zGAbzg3prRKtcfFkwsfE813oiYiuIoYrXdQME5LO71LyHhCPJ0MZNuPOiB0wOOngD05e.webp?r=7e2" alt="Berlin" loading="lazy"/>
+            <img src="assets/card-image/card-image1.webp" alt="Berlin" loading="lazy"/>
             <span class="rank">1</span>
           </div>
 
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABdu2BTLzDZapIFx3LR83EP5CFJAEcfDaaAhGnIUoz9tEn-xy2K1XjaBe0Wfz0zQB8wWEI17kf-RcCKeqLsV7TsR6oZKZYjqlw34.webp?r=79f" alt="Dhurandhar" loading="lazy"/>
+            <img src="assets/card-image/card-image2.webp" alt="Dhurandhar" loading="lazy"/>
             <span class="rank">2</span>
           </div>
 
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYWfklg5D5btQoekHBjGHSFXDW_EezXrT97RnSaEwirkVnCt91QaQlcPWCxtfkSrW04hOcHguRrAMgyKTJzs2_PKkFkbs60DHC4.webp?r=05f" alt="Show 3" loading="lazy"/>
+            <img src="assets/card-image/card-image3.webp" alt="Show 3" loading="lazy"/>
             <span class="rank">3</span>
           </div>
 
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWuYCksEgDVxmAt7osOPgI2JPrTg2rMKChNtrxGYOLk3f3lSwPn_7LIgNlYR23qKIZJXY5GGnrrJuv4AL0rviaWSXxSAE4G-p5D1D88PG5Yre0PcmS2Xmg5eMIJmi9ZRx3J6.webp?r=ea8" alt="Kartavya" loading="lazy"/>
+            <img src="assets/card-image/card-image4.webp" alt="Kartavya" loading="lazy"/>
             <span class="rank">4</span>
           </div>
 
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABSz2cw4icUVSEUYl88YZOA-3omepErekmOdyt5ywWsW-psmyYByB3Lv-DfawT-V2bMR4_e0yo9Ak71oIHXqQ3EXmWMFzC2Xo6763w7eW_ANBVsmdrNM7SyF4QeY78rNvuedV.webp?r=630" alt="Show 5" loading="lazy"/>
+            <img src="assets/card-image/card-image5.webp" alt="Show 5" loading="lazy"/>
             <span class="rank">5</span>
           </div>
 
           <div class="card reveal">
-            <img src="https://occ-0-1242-64.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUet8hcKke_oXjU3AC4J8G-bc-HZP2ZY-Th80oBke3G3arUch8e3JG9vXVeu4xshLAQedlDlncuVlmHnSEoEsn0qxeq3qbjBGEtLB0Xz9eaa53Fzw6fqkUjUPHXyzajWW-Dx.webp?r=694" alt="Show 6" loading="lazy"/>
+            <img src="assets/card-image/card-image6.webp" alt="Show 6" loading="lazy"/>
             <span class="rank">6</span>
           </div>
 
@@ -113,7 +109,6 @@
       <span class="reasons-label reveal">More Reasons to Join</span>
 
       <div class="reasons">
-
         <div class="boxes reveal">
           <h3>Enjoy on your TV</h3>
           <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
@@ -137,10 +132,9 @@
           <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
           <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="profiles-core-small"><path d="M10.8 15.6008C10.8 12.9499 12.949 10.8008 15.5999 10.8008H40.8C43.4509 10.8008 45.6 12.9498 45.6 15.6008V40.8007C45.6 43.4516 43.4509 45.6007 40.8 45.6007H15.6C12.949 45.6007 10.8 43.4517 10.8 40.8007V15.6008Z" fill="url(#paint0_radial_5179_7919)"></path><path d="M9.59998 14.4016C9.59998 11.7506 11.749 9.60162 14.4 9.60156H39.6C42.251 9.60156 44.4 11.7506 44.4 14.4016V39.6015C44.4 42.2525 42.251 44.4015 39.6 44.4015H14.4C11.749 44.4016 9.59998 42.2525 9.59998 39.6015V14.4016Z" fill="url(#paint1_radial_5179_7919)"></path><path d="M27.6 32.4016C27.6 29.7506 29.749 27.6016 32.4 27.6016L57.6 27.6016C60.2508 27.6016 62.4 29.7506 62.4 32.4016V57.6015C62.4 60.2524 60.2508 62.4016 57.6 62.4016H32.4C29.749 62.4016 27.6 60.2524 27.6 57.6016V32.4016Z" fill="url(#paint6_radial_5179_7919)"></path></g><defs><radialGradient id="paint0_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39.075 17.6882) rotate(135) scale(32.8097)"><stop stop-color="#99421D"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><radialGradient id="paint1_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(62.4 8.70157) rotate(133.87) scale(75.3216)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient><radialGradient id="paint6_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(61.8 29.7016) rotate(135) scale(43.2749)"><stop stop-color="#EF7744"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient></defs></svg>
         </div>
-
       </div>
 
-      <!-- ── FAQ ── -->
+      <!-- FAQ -->
       <div class="FAQ">
         <p id="change" class="reveal">Frequently Asked Questions</p>
 
@@ -150,7 +144,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more — on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad — all for one low monthly price.</p>
+            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more — on thousands of internet-connected devices.</p>
           </div>
         </div>
 
@@ -160,7 +154,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device — all for one fixed monthly fee. Plans range from Rs 250 to Rs 1100 a month. No extra costs, no contracts.</p>
+            <p>Plans range from Rs 250 to Rs 1100 a month. No extra costs, no contracts.</p>
           </div>
         </div>
 
@@ -170,7 +164,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+            <p>Watch anywhere, anytime on smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
           </div>
         </div>
 
@@ -180,7 +174,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees — start or stop your account anytime.</p>
+            <p>No pesky contracts. Cancel your account online in two clicks, anytime, with no cancellation fees.</p>
           </div>
         </div>
 
@@ -190,7 +184,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+            <p>Feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more.</p>
           </div>
         </div>
 
@@ -200,60 +194,58 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space. Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch.</p>
+            <p>Kids profiles come with PIN-protected parental controls that let you restrict content maturity ratings.</p>
           </div>
         </div>
 
       </div>
-      <!-- END FAQ -->
 
     </div>
-     <!-- END .page2 -->
-    </main>
-   
+    <!-- END page2 -->
+  </main>
 
-    <footer>
-      <div class="footer">
-        <div class="input">
-          <p>Ready to watch? Enter your email to create or restart your membership.</p>
-          <input type="email" id="footerEmail" placeholder="Email address" autocomplete="email"/>
-          <button onclick="handleGetStarted('footerEmail')">
-            Get Started <i class="fa-solid fa-angle-right"></i>
-          </button>
+  <footer>
+    <div class="footer">
+      <div class="input">
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <input type="email" id="footerEmail" placeholder="Email address" autocomplete="email"/>
+        <button onclick="handleGetStarted('footerEmail')">
+          Get Started <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-right">
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="#">Netflix.uk</a>
+          <a href="#">Netflix.in</a>
+          <a href="#">Netflix.pk</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Forums</a>
+          <a href="#">Documentation</a>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Refund Policy</a>
         </div>
       </div>
+    </div>
+  </footer>
 
-      <div class="footer-container">
-        <div class="footer-right">
-          <div class="footer-column">
-            <h4>Company</h4>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-          </div>
-          <div class="footer-column">
-            <h4>Products</h4>
-            <a href="#">Netflix. uk</a>
-            <a href="#">Netflix. in</a>
-            <a href="#">Netflix. pk</a>
-          </div>
-          <div class="footer-column">
-            <h4>Support</h4>
-            <a href="#">Help Center</a>
-            <a href="#">Forums</a>
-            <a href="#">Documentation</a>
-          </div>
-          <div class="footer-column">
-            <h4>Legal</h4>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Refund Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <div class="toast" id="toast"></div>
 
-    <!-- Toast notification -->
-    <div class="toast" id="toast"></div>
-
-  <script src="/js/script.js"></script>
+  <!-- FIXED: relative path, no leading slash -->
+  <script src="js/script.js"></script>
   </body>
 </html>
