@@ -1,6 +1,4 @@
-# Animated Netflix UI Clone — Frontend Practice Project
-
-> ⚠️ **Educational Project Only** — This is a frontend development practice project built for learning purposes. It is NOT affiliated with, endorsed by, or connected to Netflix Inc. in any way. No login credentials are collected or stored.
+# Animated Nexplay UI Design — Frontend Practice Project
 
 ## 🚀 Live Demo
 [View on Vercel](https://your-vercel-link-here.vercel.app)
