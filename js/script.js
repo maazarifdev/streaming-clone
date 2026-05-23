@@ -1,176 +1,100 @@
-<<<<<<< HEAD
- /* ── Toast ── */
-      function showToast(msg) {
-        const t = document.getElementById('toast');
-        t.textContent = msg;
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 3500);
-      }
+/* ══════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
 
-      /* ── Email validation + Get Started ── */
-      function handleGetStarted(inputId) {
-        const input = document.getElementById(inputId);
-        const email = input.value.trim();
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email) {
-          showToast('⚠️ Please enter your email address.');
-          input.focus();
-          return;
-        }
-        if (!re.test(email)) {
-          showToast('⚠️ Please enter a valid email address.');
-          input.focus();
-          return;
-        }
-        showToast('🎉 Welcome! Redirecting you to plans...');
-        input.value = '';
-      }
+/* ══════════════════════════════════════════
+   EMAIL VALIDATION + GET STARTED
+══════════════════════════════════════════ */
+function handleGetStarted(inputId) {
+  const input = document.getElementById(inputId);
+  const email = input.value.trim();
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    showToast('⚠️ Please enter your email address.');
+    input.focus();
+    return;
+  }
+  if (!re.test(email)) {
+    showToast('⚠️ Please enter a valid email address.');
+    input.focus();
+    return;
+  }
+  showToast('🎉 Welcome! Redirecting you to plans...');
+  input.value = '';
+}
 
-      /* ── FAQ accordion ── */
-      function toggleFAQ(btn) {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        // close all others
-        document.querySelectorAll('.questions button.margin').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-          const ans = b.closest('.questions').querySelector('.faq-answer');
-          if (ans) ans.classList.remove('open');
-        });
-        // toggle clicked
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          const ans = btn.closest('.questions').querySelector('.faq-answer');
-          if (ans) ans.classList.add('open');
-        }
-      }
+/* ══════════════════════════════════════════
+   FAQ ACCORDION
+══════════════════════════════════════════ */
+function toggleFAQ(btn) {
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-      /* ── Scroll-reveal with IntersectionObserver ── */
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            // stagger delay for cards and boxes
-            const delay = entry.target.dataset.delay || 0;
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, delay);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
+  // Close all
+  document.querySelectorAll('.questions button.margin').forEach(b => {
+    b.setAttribute('aria-expanded', 'false');
+    const ans = b.closest('.questions').querySelector('.faq-answer');
+    if (ans) ans.classList.remove('open');
+  });
 
-      // Add stagger delays to cards
-      document.querySelectorAll('.card').forEach((el, i) => {
-        el.dataset.delay = i * 80;
-      });
+  // Open clicked one (if it was closed)
+  if (!isOpen) {
+    btn.setAttribute('aria-expanded', 'true');
+    const ans = btn.closest('.questions').querySelector('.faq-answer');
+    if (ans) ans.classList.add('open');
+  }
+}
 
-      // Add stagger delays to boxes
-      document.querySelectorAll('.boxes').forEach((el, i) => {
-        el.dataset.delay = i * 100;
-      });
+/* ══════════════════════════════════════════
+   SCROLL-REVEAL  ← THIS IS WHY CARDS/BOXES
+   WERE INVISIBLE. opacity:0 is set in CSS
+   and only this JS adds class "visible".
+   Without script.js, nothing ever appeared.
+══════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = entry.target.dataset.delay || 0;
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, Number(delay));
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-      // Add stagger delays to questions
-      document.querySelectorAll('.questions').forEach((el, i) => {
-        el.dataset.delay = i * 60;
-      });
+// Stagger delays
+document.querySelectorAll('.card').forEach((el, i) => {
+  el.dataset.delay = i * 80;
+});
 
-      // Observe all reveal elements
-      document.querySelectorAll('.reveal, .card, .boxes, .questions').forEach(el => {
-        observer.observe(el);
-      });
+document.querySelectorAll('.boxes').forEach((el, i) => {
+  el.dataset.delay = i * 100;
+});
 
-      /* ── Navbar shrink on scroll ── */
-      window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 60) {
-          nav.style.cssText = 'background:rgba(20,20,20,0.97);position:fixed;top:0;left:0;right:0;max-width:100%;padding:0 5vw;z-index:999;backdrop-filter:blur(8px);transition:all 0.3s;height:56px;box-shadow:0 2px 20px rgba(0,0,0,0.5);';
-        } else {
-          nav.style.cssText = '';
-        }
-=======
- /* ── Toast ── */
-      function showToast(msg) {
-        const t = document.getElementById('toast');
-        t.textContent = msg;
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 3500);
-      }
+document.querySelectorAll('.questions').forEach((el, i) => {
+  el.dataset.delay = i * 60;
+});
 
-      /* ── Email validation + Get Started ── */
-      function handleGetStarted(inputId) {
-        const input = document.getElementById(inputId);
-        const email = input.value.trim();
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email) {
-          showToast('⚠️ Please enter your email address.');
-          input.focus();
-          return;
-        }
-        if (!re.test(email)) {
-          showToast('⚠️ Please enter a valid email address.');
-          input.focus();
-          return;
-        }
-        showToast('🎉 Welcome! Redirecting you to plans...');
-        input.value = '';
-      }
+// Observe everything that needs revealing
+document.querySelectorAll(
+  '.reveal, .card, .boxes, .questions'
+).forEach(el => revealObserver.observe(el));
 
-      /* ── FAQ accordion ── */
-      function toggleFAQ(btn) {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        // close all others
-        document.querySelectorAll('.questions button.margin').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-          const ans = b.closest('.questions').querySelector('.faq-answer');
-          if (ans) ans.classList.remove('open');
-        });
-        // toggle clicked
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          const ans = btn.closest('.questions').querySelector('.faq-answer');
-          if (ans) ans.classList.add('open');
-        }
-      }
+/* ══════════════════════════════════════════
+   STICKY NAVBAR ON SCROLL
+══════════════════════════════════════════ */
+const nav = document.querySelector('nav');
 
-      /* ── Scroll-reveal with IntersectionObserver ── */
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            // stagger delay for cards and boxes
-            const delay = entry.target.dataset.delay || 0;
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, delay);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      // Add stagger delays to cards
-      document.querySelectorAll('.card').forEach((el, i) => {
-        el.dataset.delay = i * 80;
-      });
-
-      // Add stagger delays to boxes
-      document.querySelectorAll('.boxes').forEach((el, i) => {
-        el.dataset.delay = i * 100;
-      });
-
-      // Add stagger delays to questions
-      document.querySelectorAll('.questions').forEach((el, i) => {
-        el.dataset.delay = i * 60;
-      });
-
-      // Observe all reveal elements
-      document.querySelectorAll('.reveal, .card, .boxes, .questions').forEach(el => {
-        observer.observe(el);
-      });
-
-      /* ── Navbar shrink on scroll ── */
-      window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 60) {
-          nav.style.cssText = 'background:rgba(20,20,20,0.97);position:fixed;top:0;left:0;right:0;max-width:100%;padding:0 5vw;z-index:999;backdrop-filter:blur(8px);transition:all 0.3s;height:56px;box-shadow:0 2px 20px rgba(0,0,0,0.5);';
-        } else {
-          nav.style.cssText = '';
-        }
->>>>>>> 0eea288aa62a83de27947435b883ea1820ca1a82
-      });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('nav-sticky');
+  } else {
+    nav.classList.remove('nav-sticky');
+  }
+});
