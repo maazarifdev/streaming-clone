@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/logo/favicon (1).ico" type="image/x-icon">
-    <title>Nexplay</title>
+    <title>Nexplay — Discover Games</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
@@ -12,24 +12,26 @@
 
   <main>
     <div class="main">
-      <nav>
-       <!-- In your <nav> — replace the old Netflix logo span -->
-<span style="display:flex;align-items:center;gap:10px;cursor:pointer;">
-  <svg width="28" height="38" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 6 L6 74 L20 74 L20 30 L40 74 L54 74 L54 6 L40 6 L40 50 L20 6 Z" fill="#00c8ff"/>
-  </svg>
-  <span style="color:white;font-size:30px;font-weight:900;letter-spacing:-0.5px;">NEXPLAY</span>
-</span>
+      <nav id="navbar">
+        <span class="nav-logo" style="display:flex;align-items:center;gap:10px;cursor:pointer;">
+          <svg width="28" height="38" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6 L6 74 L20 74 L20 30 L40 74 L54 74 L54 6 L40 6 L40 50 L20 6 Z" fill="#00c8ff"/>
+          </svg>
+          <span class="logo-text">NEXPLAY</span>
+        </span>
         <div class="button">
           <button class="lang">
-            <i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-globe"></i> <span class="lang-label">English</span> <i class="fa-solid fa-caret-down"></i>
           </button>
           <button class="sign">Sign In</button>
         </div>
       </nav>
 
       <div class="main-text">
-        <h1>Epic adventures, <br> legendary battles, and more</h1>
+        <div class="hero-badge">
+          <i class="fa-solid fa-gamepad"></i> Over 500+ Games Available
+        </div>
+        <h1>Epic adventures,<br/>legendary battles,<br/>and more</h1>
         <p>Experience gaming without limits.</p>
         <h3>Ready to play? Enter your email to begin your journey.</h3>
         <div class="data">
@@ -37,6 +39,29 @@
           <button onclick="handleGetStarted('heroEmail')">
             Explore Now <i class="fa-solid fa-angle-right"></i>
           </button>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Games</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">4K</span>
+            <span class="stat-label">Ultra HD</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">5M+</span>
+            <span class="stat-label">Players</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">PKR 250</span>
+            <span class="stat-label">/ month</span>
+          </div>
         </div>
       </div>
 
@@ -47,8 +72,7 @@
         <div class="hero-bg"></div>
         <svg class="curve-arc" viewBox="0 0 1000 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- FIXED: was width="12 0%" (typo with space) -->
-            <filter id="redglow" x="-10%" y="-100%" width="120%" height="400%">
+            <filter id="cyanglow" x="-10%" y="-100%" width="120%" height="400%">
               <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="bigblur"/>
               <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="smallblur"/>
               <feMerge>
@@ -58,7 +82,7 @@
               </feMerge>
             </filter>
           </defs>
-          <path d="M0,120 C250,-20 750,-20 1000,120" fill="none" stroke="#e50914" stroke-width="3" filter="url(#redglow)"/>
+          <path d="M0,120 C250,-20 750,-20 1000,120" fill="none" stroke="#00c8ff" stroke-width="3" filter="url(#cyanglow)"/>
         </svg>
         <svg class="curve-mask" viewBox="0 0 1000 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,110 L0,100 C250,5 750,5 1000,100 L1000,110 Z" fill="#141414"/>
@@ -69,42 +93,85 @@
     <!-- Page 2 -->
     <div class="page2">
 
-      <p class="trending-label reveal">Trending Now</p>
+      <!-- Genre filter tabs -->
+      <div class="genre-tabs reveal">
+        <button class="genre-btn active" onclick="filterGenre(this,'all')">All</button>
+        <button class="genre-btn" onclick="filterGenre(this,'action')">Action</button>
+        <button class="genre-btn" onclick="filterGenre(this,'rpg')">RPG</button>
+        <button class="genre-btn" onclick="filterGenre(this,'adventure')">Adventure</button>
+        <button class="genre-btn" onclick="filterGenre(this,'sports')">Sports</button>
+      </div>
+
+      <p class="trending-label reveal">🔥 Trending Now</p>
 
       <div class="trending">
         <div class="cards-row">
-
-          <!-- FIXED: all src now point to local files in assets/images/cards/ -->
-          <div class="card reveal">
-            <img src="/assets/card-image/card-image1.webp" alt="Berlin" loading="lazy"/>
+          <!-- FIX: NO leading slash on any image path -->
+          <div class="card reveal" data-genre="action">
+            <img src="assets/card-image/card-image1.webp" alt="Game 1" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">Action</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">1</span>
           </div>
 
-          <div class="card reveal">
-            <img src="/assets/card-image/card-image2.webp" alt="Dhurandhar" loading="lazy"/>
+          <div class="card reveal" data-genre="rpg">
+            <img src="assets/card-image/card-image2.webp" alt="Game 2" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">RPG</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">2</span>
           </div>
 
-          <div class="card reveal">
-            <img src="/assets/card-image/card-image3.webp" alt="Show 3" loading="lazy"/>
+          <div class="card reveal" data-genre="adventure">
+            <img src="assets/card-image/card-image3.webp" alt="Game 3" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">Adventure</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">3</span>
           </div>
 
-          <div class="card reveal">
-            <img src="/assets/card-image/card-image4.webp" alt="Kartavya" loading="lazy"/>
+          <div class="card reveal" data-genre="action">
+            <img src="assets/card-image/card-image4.webp" alt="Game 4" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">Action</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">4</span>
           </div>
 
-          <div class="card reveal">
-            <img src="/assets/card-image/card-image5.jpg" alt="Show 5" loading="lazy"/>
+          <div class="card reveal" data-genre="sports">
+            <img src="assets/card-image/card-image5.jpg" alt="Game 5" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">Sports</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">5</span>
           </div>
 
-          <div class="card reveal">
-            <img src="assets/card-image/card-image6.webp" alt="Show 6" loading="lazy"/>
+          <div class="card reveal" data-genre="rpg">
+            <img src="assets/card-image/card-image6.webp" alt="Game 6" loading="lazy"/>
+            <div class="card-overlay">
+              <span class="card-genre-tag">RPG</span>
+              <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
             <span class="rank">6</span>
           </div>
+        </div>
+      </div>
 
+      <!-- NEW: Platform badges -->
+      <div class="platform-section reveal">
+        <p class="platform-label">Play on all platforms</p>
+        <div class="platform-badges">
+          <div class="platform-badge"><i class="fa-brands fa-playstation"></i> PlayStation</div>
+          <div class="platform-badge"><i class="fa-brands fa-xbox"></i> Xbox</div>
+          <div class="platform-badge"><i class="fa-solid fa-mobile-screen"></i> Mobile</div>
+          <div class="platform-badge"><i class="fa-solid fa-laptop"></i> PC</div>
+          <div class="platform-badge"><i class="fa-solid fa-tv"></i> Smart TV</div>
         </div>
       </div>
 
@@ -113,27 +180,53 @@
 
       <div class="reasons">
         <div class="boxes reveal">
-          <h3>Enjoy on your TV</h3>
-          <p>Watch on Smart TVs, Playstation, Xbox, Chrome cast, Apple TV, Blu-ray players, and more.</p>
-          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="television-core-small"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.2 53.3992C37.2 52.7365 36.6628 52.1992 36 52.1992H34.8C34.1373 52.1992 33.6 52.7365 33.6 53.3992V56.2636C33.6 56.9129 33.0834 57.4433 32.4347 57.4739C30.3013 57.5744 28.1719 57.7834 26.0546 58.1011L19.444 59.0926C18.2692 59.2688 17.4 60.2782 17.4 61.4662V62.0992C17.4 62.4304 17.6686 62.6992 18 62.6992H52.8C53.1314 62.6992 53.4 62.4304 53.4 62.0992V61.4662C53.4 60.2782 52.5309 59.2688 51.3561 59.0926L44.7454 58.1011C42.6282 57.7834 40.4987 57.5744 38.3653 57.4739C37.7167 57.4433 37.2 56.9129 37.2 56.2636V53.3992Z" fill="url(#paint0_radial_5179_1308)"></path><path d="M18.6 60.7388C18.6 60.2306 18.9587 59.796 19.4602 59.711C22.0196 59.2775 29.7585 58.0508 35.4 58.0508C41.0415 58.0508 48.7804 59.2775 51.3398 59.711C51.8412 59.796 52.2 60.2306 52.2 60.7388C52.2 60.902 52.0575 61.0268 51.8967 61.0004C50.1219 60.707 40.9704 59.2409 35.4 59.2409C29.8295 59.2409 20.678 60.707 18.9033 61.0004C18.7425 61.0268 18.6 60.902 18.6 60.7388Z" fill="url(#paint1_radial_5179_1308)"></path><path d="M63 12H8.99995C8.00584 12 7.19995 12.8059 7.19995 13.8V51.6C7.19995 52.5941 8.00584 53.4 8.99995 53.4H63C63.9941 53.4 64.8 52.5941 64.8 51.6V13.8C64.8 12.8059 63.9941 12 63 12Z" fill="url(#paint2_linear_5179_1308)"></path><path d="M63 12H8.99995C8.00584 12 7.19995 12.8059 7.19995 13.8V51.6C7.19995 52.5941 8.00584 53.4 8.99995 53.4H63C63.9941 53.4 64.8 52.5941 64.8 51.6V13.8C64.8 12.8059 63.9941 12 63 12Z" fill="url(#paint3_radial_5179_1308)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8.99995 12.6H63C63.663 12.6 64.2 13.1372 64.2 13.8V50.4H7.79995V13.8C7.79995 13.1372 8.33719 12.6 8.99995 12.6ZM7.19995 50.4V13.8C7.19995 12.8059 8.00581 12 8.99995 12H63C63.9942 12 64.8 12.8059 64.8 13.8V50.4V51.6C64.8 52.5941 63.9942 53.4 63 53.4H8.99995C8.00581 53.4 7.19995 52.5941 7.19995 51.6V50.4Z" fill="url(#paint4_radial_5179_1308)"></path><path d="M35.4 52.8C36.3941 52.8 37.2 52.3971 37.2 51.9C37.2 51.4029 36.3941 51 35.4 51C34.4059 51 33.6 51.4029 33.6 51.9C33.6 52.3971 34.4059 52.8 35.4 52.8Z" fill="url(#paint5_radial_5179_1308)"></path></g><defs><radialGradient id="paint0_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50.3269 49.3723) rotate(118.526) scale(55.1579 46.2871)"><stop stop-color="#802600"></stop><stop offset="0.333333" stop-color="#6F181D"></stop><stop offset="0.666667" stop-color="#5B1333"></stop><stop offset="1" stop-color="#391945"></stop></radialGradient><radialGradient id="paint1_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.1077 53.6128) rotate(158.116) scale(32.7275 42.219)"><stop stop-color="#99421D"></stop><stop offset="0.333333" stop-color="#99161D"></stop><stop offset="0.666667" stop-color="#7D1845"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><linearGradient id="paint2_linear_5179_1308" x1="10.4727" y1="14.9572" x2="56.1755" y2="51.4814" gradientUnits="userSpaceOnUse"><stop stop-color="#99161D"></stop><stop offset="0.245283" stop-color="#CA005B"></stop><stop offset="0.346698" stop-color="#FF479A"></stop><stop offset="0.46934" stop-color="#CC3CFF"></stop><stop offset="0.735849" stop-color="#BC1A22"></stop><stop offset="1" stop-color="#C94FF5"></stop></linearGradient><radialGradient id="paint3_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(38.6181 23.8286) rotate(90) scale(25.9571 25.8545)"><stop stop-color="#1C0E20" stop-opacity="0"></stop><stop offset="1" stop-color="#1C0E20"></stop></radialGradient><radialGradient id="paint4_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(54 20.1938) rotate(144.293) scale(47.2897 44.8232)"><stop stop-color="#EF7744"></stop><stop offset="0.333333" stop-color="#E50914"></stop><stop offset="0.666667" stop-color="#A70D53"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient><radialGradient id="paint5_radial_5179_1308" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.525 51.3562) rotate(135) scale(4.58735)"><stop stop-color="#FFDCCC"></stop><stop offset="0.333333" stop-color="#FFBDC0"></stop><stop offset="0.666667" stop-color="#F89DC6"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient></defs></svg>
+          <div class="box-icon"><i class="fa-solid fa-tv"></i></div>
+          <h3>Play on your TV</h3>
+          <p>Game on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, and more connected devices.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="television-core-small"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.2 53.3992C37.2 52.7365 36.6628 52.1992 36 52.1992H34.8C34.1373 52.1992 33.6 52.7365 33.6 53.3992V56.2636C33.6 56.9129 33.0834 57.4433 32.4347 57.4739C30.3013 57.5744 28.1719 57.7834 26.0546 58.1011L19.444 59.0926C18.2692 59.2688 17.4 60.2782 17.4 61.4662V62.0992C17.4 62.4304 17.6686 62.6992 18 62.6992H52.8C53.1314 62.6992 53.4 62.4304 53.4 62.0992V61.4662C53.4 60.2782 52.5309 59.2688 51.3561 59.0926L44.7454 58.1011C42.6282 57.7834 40.4987 57.5744 38.3653 57.4739C37.7167 57.4433 37.2 56.9129 37.2 56.2636V53.3992Z" fill="url(#p0a)"></path><path d="M63 12H9C8 12 7.2 12.8 7.2 13.8V51.6C7.2 52.6 8 53.4 9 53.4H63C64 53.4 64.8 52.6 64.8 51.6V13.8C64.8 12.8 64 12 63 12Z" fill="url(#p2a)"></path></g><defs><linearGradient id="p2a" x1="10" y1="14" x2="56" y2="51" gradientUnits="userSpaceOnUse"><stop stop-color="#00c8ff"></stop><stop offset="0.5" stop-color="#7F77DD"></stop><stop offset="1" stop-color="#00c8ff"></stop></linearGradient><radialGradient id="p0a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 49) rotate(118) scale(55 46)"><stop stop-color="#005a8a"></stop><stop offset="1" stop-color="#002040"></stop></radialGradient></defs></svg>
         </div>
 
         <div class="boxes reveal">
-          <h3>Download your shows to play offline</h3>
-          <p>Save your favorites easily and always have something to play.</p>
-          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="download-core-small"><path d="M36 70.2008C54.8882 70.2008 70.2001 54.8889 70.2001 36.0008C70.2001 17.1126 54.8882 1.80078 36 1.80078C17.1119 1.80078 1.80005 17.1126 1.80005 36.0008C1.80005 54.8889 17.1119 70.2008 36 70.2008Z" fill="url(#paint0_radial_5179_7940)"></path><path opacity="0.4" d="M64.7658 36.195C65.5206 51.5916 53.7908 63.5824 38.5668 62.977C23.3428 62.3722 10.3893 49.4 9.63446 34.0034C8.87954 18.6068 20.6091 6.61594 35.8331 7.22116C51.0571 7.82638 64.0104 20.7984 64.7658 36.195Z" fill="url(#paint1_radial_5179_7940)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M39.0849 42.2727L46.3387 35.76L48.8945 38.5142L38.9118 47.477L37.8466 48.4333L36.6071 47.477L24.9899 38.5142L27.0434 35.76L35.4849 42.2727L33.6 21.6016H37.2L39.0849 42.2727Z" fill="url(#paint5_radial_5179_7940)"></path></g><defs><radialGradient id="paint0_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.0001 36.1837) rotate(-90) scale(34.3829)"><stop offset="0.782019" stop-color="#982DBE"></stop><stop offset="1" stop-color="#E4A1FA" stop-opacity="0"></stop></radialGradient><radialGradient id="paint1_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(52.9937 20.0992) rotate(135) scale(49.9836)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient><radialGradient id="paint5_radial_5179_7940" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(31.2 32.1016) rotate(39.5226) scale(15.5567)"><stop stop-color="#EF7744"></stop><stop offset="0.2406" stop-color="#E50914"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient></defs></svg>
+          <div class="box-icon"><i class="fa-solid fa-download"></i></div>
+          <h3>Download &amp; play offline</h3>
+          <p>Save your favorite games and always have something to play — even without internet.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="34" fill="url(#dlgrad)"/><path fill-rule="evenodd" d="M39 42L46 35.8L49 38.5L37 48.4L36.6 48L25 38.5L27 35.8L35.5 42.3L33.6 21.6H37.2L39 42Z" fill="white"/><defs><radialGradient id="dlgrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36 36) scale(34)"><stop stop-color="#00c8ff"></stop><stop offset="1" stop-color="#0050a0"></stop></radialGradient></defs></svg>
         </div>
 
         <div class="boxes reveal">
+          <div class="box-icon"><i class="fa-solid fa-earth-asia"></i></div>
           <h3>Play everywhere</h3>
-          <p>Explore unlimited games and fun on your phone, tablet, laptop, and TV.</p>
-          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="telescope-core-small"><path d="M24.0492 36.6016L33.6 46.3898L17.8029 56.8633C17.8029 56.8633 15.8891 57.6983 13.625 55.2638C11.361 52.8293 12.1235 51.238 12.1235 51.238L24.0492 36.6016Z" fill="url(#paint0_radial_5179_1664)"></path><path d="M39 13.0195L59.1 33.6788L32.5325 50.4142C32.5325 50.4142 28.7459 50.2552 24.3978 45.4897C20.0498 40.7243 21.4096 35.8101 21.4096 35.8101L39 13.0195Z" fill="url(#paint2_radial_5179_1664)"></path><path d="M57.6709 15.3516C63.1044 21.2807 63.9858 29.2883 59.6386 33.2371C55.2916 37.186 47.3628 35.5806 41.9292 29.6515C36.4954 23.7224 35.6145 15.7148 39.9615 11.766C44.3084 7.81716 52.2372 9.42252 57.6709 15.3516Z" fill="url(#paint3_radial_5179_1664)"></path></g><defs><radialGradient id="paint0_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.6875 32.7016) rotate(135) scale(34.9134)"><stop stop-color="#99421D"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><radialGradient id="paint2_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42.3 29.106) rotate(135) scale(31.8127)"><stop stop-color="#FB540D"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient><radialGradient id="paint3_radial_5179_1664" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(57.675 14.7078) rotate(134.326) scale(24.0433 24.0367)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient></defs></svg>
+          <p>Explore games on your phone, tablet, laptop, and TV — seamlessly switch between devices.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="34" fill="url(#ewgrad)"/><path d="M36 8 C36 8 20 28 20 36 C20 44 36 64 36 64 C36 64 52 44 52 36 C52 28 36 8 36 8Z" fill="none" stroke="white" stroke-width="2"/><circle cx="36" cy="36" r="28" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="8" y1="36" x2="64" y2="36" stroke="white" stroke-width="1.5"/><defs><radialGradient id="ewgrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36 36) scale(34)"><stop stop-color="#7F77DD"></stop><stop offset="1" stop-color="#1a0030"></stop></radialGradient></defs></svg>
         </div>
 
         <div class="boxes reveal">
-          <h3>Create profiles for kids</h3>
-          <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
-          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><g id="profiles-core-small"><path d="M10.8 15.6008C10.8 12.9499 12.949 10.8008 15.5999 10.8008H40.8C43.4509 10.8008 45.6 12.9498 45.6 15.6008V40.8007C45.6 43.4516 43.4509 45.6007 40.8 45.6007H15.6C12.949 45.6007 10.8 43.4517 10.8 40.8007V15.6008Z" fill="url(#paint0_radial_5179_7919)"></path><path d="M9.59998 14.4016C9.59998 11.7506 11.749 9.60162 14.4 9.60156H39.6C42.251 9.60156 44.4 11.7506 44.4 14.4016V39.6015C44.4 42.2525 42.251 44.4015 39.6 44.4015H14.4C11.749 44.4016 9.59998 42.2525 9.59998 39.6015V14.4016Z" fill="url(#paint1_radial_5179_7919)"></path><path d="M27.6 32.4016C27.6 29.7506 29.749 27.6016 32.4 27.6016L57.6 27.6016C60.2508 27.6016 62.4 29.7506 62.4 32.4016V57.6015C62.4 60.2524 60.2508 62.4016 57.6 62.4016H32.4C29.749 62.4016 27.6 60.2524 27.6 57.6016V32.4016Z" fill="url(#paint6_radial_5179_7919)"></path></g><defs><radialGradient id="paint0_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39.075 17.6882) rotate(135) scale(32.8097)"><stop stop-color="#99421D"></stop><stop offset="1" stop-color="#59216E"></stop></radialGradient><radialGradient id="paint1_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(62.4 8.70157) rotate(133.87) scale(75.3216)"><stop stop-color="#FFDCCC"></stop><stop offset="1" stop-color="#E4A1FA"></stop></radialGradient><radialGradient id="paint6_radial_5179_7919" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(61.8 29.7016) rotate(135) scale(43.2749)"><stop stop-color="#EF7744"></stop><stop offset="1" stop-color="#792A95"></stop></radialGradient></defs></svg>
+          <div class="box-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Safe mode for kids</h3>
+          <p>Send kids on adventures with age-appropriate games — PIN-protected parental controls included free.</p>
+          <svg class="down" width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="34" fill="url(#kidgrad)"/><path d="M36 14 L52 22 L52 38 C52 48 44 56 36 60 C28 56 20 48 20 38 L20 22 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 36 L34 42 L44 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><defs><radialGradient id="kidgrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36 36) scale(34)"><stop stop-color="#1eff8e"></stop><stop offset="1" stop-color="#006040"></stop></radialGradient></defs></svg>
+        </div>
+      </div>
+
+      <!-- NEW: Testimonial strip -->
+      <div class="testimonials reveal">
+        <p class="testimonials-label">What players say</p>
+        <div class="testimonial-row">
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Nexplay changed how I discover new games. The UI is incredible!"</p>
+            <span class="t-author">— Ahmed K., Karachi</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Best gaming platform I've used. Smooth on all my devices."</p>
+            <span class="t-author">— Sara M., Lahore</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"The kids mode is amazing. My son loves the adventure games!"</p>
+            <span class="t-author">— Bilal R., Islamabad</span>
+          </div>
         </div>
       </div>
 
@@ -147,7 +240,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Nexplay is a gaming platform that offers a wide variety of award-winning popular adventures, fun, animated, and cinematic games and more — on thousands of internet-connected devices.</p>
+            <p>Nexplay is a gaming discovery platform that offers a wide variety of award-winning action, RPG, adventure, and family games — playable on thousands of internet-connected devices.</p>
           </div>
         </div>
 
@@ -157,7 +250,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Plans range from Rs 250 to Rs 1100 a month. No extra costs, no contracts.</p>
+            <p>Plans start from PKR 250 to PKR 1100 a month. No extra costs, no contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -167,7 +260,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Play anywhere, anytime on smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+            <p>Play anywhere, anytime on smart TVs, smartphones, tablets, PCs, and game consoles. Your progress syncs across all devices.</p>
           </div>
         </div>
 
@@ -177,7 +270,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>No pesky contracts. Cancel your account online in two clicks, anytime, with no cancellation fees.</p>
+            <p>No contracts, no cancellation fees. Cancel your account online in two clicks, anytime you want.</p>
           </div>
         </div>
 
@@ -187,7 +280,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Feature games, fun, adventures, anime, award-winning Nexplay originals, and more.</p>
+            <p>Action, RPG, adventure, sports, puzzle, anime games, and award-winning Nexplay originals. New titles added every week.</p>
           </div>
         </div>
 
@@ -197,7 +290,7 @@
             <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" clip-rule="evenodd"></path></svg></span>
           </button>
           <div class="faq-answer">
-            <p>Kids profiles come with PIN-protected parental controls that let you restrict content maturity ratings.</p>
+            <p>Kids profiles include PIN-protected parental controls. Parents set content maturity limits — kids get a safe, fun gaming space free with any membership.</p>
           </div>
         </div>
 
@@ -224,12 +317,13 @@
           <h4>Company</h4>
           <a href="#">About Us</a>
           <a href="#">Contact Us</a>
+          <a href="#">Careers</a>
         </div>
         <div class="footer-column">
-          <h4>Products</h4>
-          <a href="#">Nexplay.uk</a>
-          <a href="#">Nexplay.in</a>
+          <h4>Nexplay</h4>
           <a href="#">Nexplay.pk</a>
+          <a href="#">Nexplay.in</a>
+          <a href="#">Nexplay.uk</a>
         </div>
         <div class="footer-column">
           <h4>Support</h4>
@@ -241,14 +335,17 @@
           <h4>Legal</h4>
           <a href="#">Privacy Policy</a>
           <a href="#">Refund Policy</a>
+          <a href="#">Terms of Use</a>
         </div>
       </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Nexplay. Built by <strong>Maaz Arif</strong> · Frontend Practice Project</p>
     </div>
   </footer>
 
   <div class="toast" id="toast"></div>
-
-  <!-- FIXED: relative path, no leading slash -->
   <script src="js/script.js"></script>
   </body>
 </html>

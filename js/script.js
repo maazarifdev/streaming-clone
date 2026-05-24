@@ -9,7 +9,7 @@ function showToast(msg) {
 }
 
 /* ══════════════════════════════════════════
-   EMAIL VALIDATION + GET STARTED
+   EMAIL VALIDATION
 ══════════════════════════════════════════ */
 function handleGetStarted(inputId) {
   const input = document.getElementById(inputId);
@@ -17,15 +17,13 @@ function handleGetStarted(inputId) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email) {
     showToast('⚠️ Please enter your email address.');
-    input.focus();
-    return;
+    input.focus(); return;
   }
   if (!re.test(email)) {
     showToast('⚠️ Please enter a valid email address.');
-    input.focus();
-    return;
+    input.focus(); return;
   }
-  showToast('🎉 Welcome! Redirecting you to plans...');
+  showToast('🎮 Welcome to Nexplay! Setting up your account...');
   input.value = '';
 }
 
@@ -34,15 +32,11 @@ function handleGetStarted(inputId) {
 ══════════════════════════════════════════ */
 function toggleFAQ(btn) {
   const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-  // Close all
   document.querySelectorAll('.questions button.margin').forEach(b => {
     b.setAttribute('aria-expanded', 'false');
     const ans = b.closest('.questions').querySelector('.faq-answer');
     if (ans) ans.classList.remove('open');
   });
-
-  // Open clicked one (if it was closed)
   if (!isOpen) {
     btn.setAttribute('aria-expanded', 'true');
     const ans = btn.closest('.questions').querySelector('.faq-answer');
@@ -51,50 +45,69 @@ function toggleFAQ(btn) {
 }
 
 /* ══════════════════════════════════════════
-   SCROLL-REVEAL  ← THIS IS WHY CARDS/BOXES
-   WERE INVISIBLE. opacity:0 is set in CSS
-   and only this JS adds class "visible".
-   Without script.js, nothing ever appeared.
+   GENRE FILTER
+══════════════════════════════════════════ */
+function filterGenre(btn, genre) {
+  document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    if (genre === 'all' || card.dataset.genre === genre) {
+      card.style.display = '';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 50);
+    } else {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.9)';
+      setTimeout(() => { card.style.display = 'none'; }, 300);
+    }
+  });
+}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
 ══════════════════════════════════════════ */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const delay = entry.target.dataset.delay || 0;
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, Number(delay));
+      const delay = Number(entry.target.dataset.delay || 0);
+      setTimeout(() => entry.target.classList.add('visible'), delay);
       revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-// Stagger delays
-document.querySelectorAll('.card').forEach((el, i) => {
-  el.dataset.delay = i * 80;
-});
+document.querySelectorAll('.card').forEach((el, i)       => { el.dataset.delay = i * 80; });
+document.querySelectorAll('.boxes').forEach((el, i)      => { el.dataset.delay = i * 100; });
+document.querySelectorAll('.questions').forEach((el, i)  => { el.dataset.delay = i * 55; });
 
-document.querySelectorAll('.boxes').forEach((el, i) => {
-  el.dataset.delay = i * 100;
-});
-
-document.querySelectorAll('.questions').forEach((el, i) => {
-  el.dataset.delay = i * 60;
-});
-
-// Observe everything that needs revealing
 document.querySelectorAll(
   '.reveal, .card, .boxes, .questions'
 ).forEach(el => revealObserver.observe(el));
 
 /* ══════════════════════════════════════════
-   STICKY NAVBAR ON SCROLL
+   STICKY NAV
 ══════════════════════════════════════════ */
-const nav = document.querySelector('nav');
+const nav = document.getElementById('navbar');
+const backTop = document.getElementById('backTop');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     nav.classList.add('nav-sticky');
+    backTop.classList.add('show');
   } else {
     nav.classList.remove('nav-sticky');
+    backTop.classList.remove('show');
   }
+});
+
+/* ══════════════════════════════════════════
+   BACK TO TOP
+══════════════════════════════════════════ */
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
